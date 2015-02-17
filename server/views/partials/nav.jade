@@ -9,6 +9,6 @@ nav.navbar.navbar-default
       a.navbar-brand(href='/') resQ Center
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active: a(href='/'): i.fa.fa-home &nbsp; Home
-        li: a(href='/faq'): i.fa.fa-question &nbsp; Faq
-        li: a(href='/contact'): i.fa.fa-at &nbsp; Contact
+        li(class=active(path, '/')): a(href='/'): i.fa.fa-home &nbsp; Home
+        li(class=active(path, '/faq')): a(href='/faq'): i.fa.fa-question &nbsp; Faq
+        li(class=active(path, '/contact')): a(href='/contact'): i.fa.fa-at &nbsp; Contact
