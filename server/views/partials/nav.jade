@@ -1,3 +1,14 @@
-nav
-  ul
-    li: a(href='/') Home
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') resQ Center
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active: a(href='/'): i.fa.fa-home &nbsp; Home
+        li: a(href='/faq'): i.fa.fa-question &nbsp; Faq
+        li: a(href='/contact'): i.fa.fa-at &nbsp; Contact
