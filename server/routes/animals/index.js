@@ -2,10 +2,30 @@
 
 var Animal = require('../../models/animal');
 var active = require('../../views/helpers/active');
+var _ = require('lodash');
 
 module.exports = {
   handler: function(request, reply) {
-    Animal.find({isAdopted:false}, function(err, animals) {
+
+  var q = request.query;
+
+  q = _.pick(q, function(v) {
+    return v;
+  })
+   if(q.min) {
+     q.age = {$gte : q.min};
+     delete q.min;
+   }
+
+   if(q.max) {
+     q.age = q.age || {};
+     _.merge(q.age, {$lte : q.max});
+     delete q.max;
+   }
+
+  q.isAdopted = false;
+
+    Animal.find(request.query, function(err, animals) {
       reply.view('templates/animals/index', {path:'/animals', active:active, animals:animals});
     });
   }

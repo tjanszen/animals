@@ -9,7 +9,8 @@ var clientSchema = mongoose.Schema({
     city: String,
     state: String,
     address: String,
-    age: Number
+    age: Number,
+    pets:[{type: mongoose.Schema.ObjectId, ref: 'Animal'}]
 });
 
 module.exports = mongoose.model('Client', clientSchema);

@@ -4,8 +4,29 @@ block content
   button.btn.btn-default
     a(href='animals/new')
       span.glyphicon.glyphicon-plus
-      
-
+  
+  #filter
+    form(method='get', action='/animals')
+      label Min Age
+      input(type='number' name='min')
+      label Max Age
+      input(typ='number' name='max')
+      label Gender
+      select(name='gender')
+        option
+        option male
+        option female
+      label Species
+      select(name='species')
+        option 
+        option Dog
+        option Cat
+        option Frog
+        option Snake
+      label Breed
+      input(type='text', name='breed')
+      button(type='submit') Filter
+        
   .row
     each animal in animals
       .col-sm-6.landing-page-col

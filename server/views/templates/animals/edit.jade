@@ -3,7 +3,7 @@ block content
   h3= animal.name
   .row
     .col-xs-8
-      form(method='post', action='/animals').form-horizontal
+      form(method='post', action='/animals/#{animal._id}').form-horizontal
         .form-group
           label(for='name') Name
           input#name.form-control(type='text', name='name' placeholder="Rosco" required autofocus=true value=animal.name)
@@ -14,28 +14,26 @@ block content
           label Gender
           .radio
             label
-              input(type='radio', name='gender' value='male')
+              input(type='radio', name='gender' value='male' checked=animal.gender === 'male')
               span Male
           .radio
             label
-              input(type='radio', name='gender' value='female')
+              input(type='radio', name='gender' value='female' checked=animal.gender === 'female')
               span Female
         .form-group
           label(for='spcecies') Species
-          select#species.form-control(name='species' value=animal.species)
-            option Dog
-            option Cat
-            option Frog
-            option Snake
+          select#species.form-control(name='species')
+            each s in species
+              option(selected=animal.species === s)=s
         .form-group
           label(for='age') Age
-          input#age(type='number', name='age' placeholder="4?" value=animal.age)
+          input#age(type='number', name='age', placeholder="4?", value=animal.age)
         .form-group
           label(for='breed') Breed
-          input#breed(type='text', name='breed' class='form-control' placeholder="Terrior?" value=animal.breed)
+          input#breed(type='text', name='breed', class='form-control', value=animal.breed)
         .form-group
           label(for='description') Description
-          textarea#description.form-control(type='text', name='description' placeholder="Terrior?" animal.description)
+          textarea#description.form-control(type='text', name='description')=animal.description
         .form-group
           button.btn.btn-default(type='submit') Submit
       
