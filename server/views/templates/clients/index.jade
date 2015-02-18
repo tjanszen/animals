@@ -1,0 +1,18 @@
+extends ../../layouts/master
+block content
+  h3 Current Clients
+  a(href='clients/new') Add Client
+  
+  .row#clients
+    each client in clients
+      .col-xs-4
+        .row
+          a(href='/clients/#{client._id}')=client.name
+        .row
+          span= client.zip
+        .row
+          span= client.state
+        .row
+          span= client.address
+        .row
+          span= client.age

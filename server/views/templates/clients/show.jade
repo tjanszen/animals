@@ -1,0 +1,20 @@
+extends ../../layouts/master
+block content
+  h3 Client Details:
+  
+  form(method='post', action='/clients/#{client._id}/delete')
+    button.btn.btn-danger(type='submit') Delete Client
+    a.btn.btn-info(href='/clients/#{client._id}/edit') Edit
+  
+  .row#client
+      .col-xs-4
+        .row
+          a(href='/clients/#{client._id}')=client.name
+        .row
+          span= client.name
+        .row
+          span= client.zip
+        .row
+          span= client.state
+        .row
+          span= client.age

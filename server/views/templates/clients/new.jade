@@ -1,0 +1,23 @@
+extends ../../layouts/master
+block content
+  h3 Add New Client
+  .row
+    .col-xs-8
+      form(method='post', action='/clients').form-horizontal
+        .form-group
+          label(for='name') Name
+          input#name.form-control(type='text', name='name', autofocus=true)
+        .form-group
+          label(for='zip') Zip
+          input#zip.form-control(type='number' name='zip')
+        .form-group
+          label(for='state') State
+          input#state.form-control(type='text', name='state')
+        .form-group
+          label(for='address') Address
+          input#address.form-control(type='text', name='address')
+        .form-group
+          button.btn.btn-default(type='submit') Submit
+        
+        
+ 
