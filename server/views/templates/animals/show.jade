@@ -6,18 +6,37 @@ block content
     button.btn.btn-danger(type='submit') Delete Animal
   a.btn.btn-info(href='/animals/#{animal._id}/edit') Edit
   
-  .row#animals
-      .col-xs-4
-        .row
-          a(href='/animals/#{animal._id}')=animal.name
-        .row
-          #image(style='background-size: cover; height:200px; width:200px; background-image:url("' + animal.photo + '")')
-        .row
-          span= animal.description
-        .row
-          span= animal.species
-        .row
-          span= animal.breed
-        .row
-          h6 Age
-          span= animal.age
+  .row
+      .col-xs-12.col-sm-12.col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
+        .panel.panel-default
+          .panel-heading.resume-heading
+            .row
+              .col-lg-12
+                .col-xs-12.col-sm-4
+                  figure
+                    img.details-page.img-circle.img-responsive(src='#{animal.photo}')
+                .col-xs-12.col-sm-8
+                  ul.list-group
+                    li.list-group-item Name: #{animal.name}
+                    li.list-group-item Breed: #{animal.breed}
+                    li.list-group-item Type: #{animal.species}
+                    li.list-group-item Age: #{animal.age}
+                    li.list-group-item  #{animal.description}
+
+  
+  
+  //- .row#animals
+  //-     .col-xs-4
+  //-       .row
+  //-         a(href='/animals/#{animal._id}')=animal.name
+  //-       .row
+  //-         #image(style='background-size: cover; height:200px; width:200px; background-image:url("' + animal.photo + '")')
+  //-       .row
+  //-         span= animal.description
+  //-       .row
+  //-         span= animal.species
+  //-       .row
+  //-         span= animal.breed
+  //-       .row
+  //-         h6 Age
+  //-         span= animal.age

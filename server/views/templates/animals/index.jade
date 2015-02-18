@@ -1,24 +1,16 @@
 extends ../../layouts/master
 block content
   h3 Animals Available
-  a(href='animals/new') Animals New
-  
-  .row#animals
+  button.btn.btn-default
+    span.glyphicon.glyphicon-plus
+    a(href='animals/new') Add A New Pup!
+
+  .row
     each animal in animals
-      .col-xs-4
-        .row
-          a(href='/animals/#{animal._id}')=animal.name
-        .row
-          #image(style='background-size: cover; height:200px; width:200px; background-image:url("' + animal.photo + '")')
-        .row
-          span= animal.description
-        .row
-          span= animal.species
-        .row
-          span= animal.breed
-        .row
-          h6 Age
-          span= animal.age
+      .col-sm-6.landing-page-col
+        a(href='/animals/#{animal._id}')
+          img.landing-page-img.img-circle.img-responsive(src='#{animal.photo}')
+                  
 
   
     
