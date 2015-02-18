@@ -1,12 +1,13 @@
 extends ../../layouts/master
 block content
-  h3 Current Clients
-  a(href='clients/new') Add Client
-  
-  .row#clients
+  h3 Clients
+  button.btn.btn-default
+    a(href='clients/new')
+      span.glyphicon.glyphicon-plus
+        
+  .row
     each client in clients
-      .col-xs-4
-        .row
-          a(href='/clients/#{client._id}')=client.name
-          img.img-responsive(src='#{client.photo}')
-          
+      .col-sm-6.landing-page-col
+        a(href='/clients/#{client._id}')
+          img.landing-page-img.img-circle.img-responsive(src='#{client.photo}')
+        h3 #{client.name}

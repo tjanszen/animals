@@ -2,19 +2,35 @@ extends ../../layouts/master
 block content
   h3 Client Details:
   
-  form(method='post', action='/clients/#{client._id}/delete')
-    button.btn.btn-danger(type='submit') Delete Client
-    a.btn.btn-info(href='/clients/#{client._id}/edit') Edit
-  
-  .row#client
-      .col-xs-4
+  .row
+    .panel.panel-default
+      .panel-heading.resume-heading.animal-card
         .row
-          a(href='/clients/#{client._id}')=client.name
-        .row
-          span= client.name
-        .row
-          span= client.zip
-        .row
-          span= client.state
-        .row
-          span= client.age
+          .col-lg-12
+            .col-xs-12.col-sm-4
+              .row
+                figure
+                  img.img-circle.img-responsive(src='#{client.photo}')
+              .row
+                .col-xs-offset-1.col-xs-10.fact-list
+                  .row.facts
+                    span Background Check
+                    i.fa.fa-thumbs-o-up
+                  .row.facts
+                    span Dog/Cat Owner
+                    i.fa.fa-thumbs-o-up
+            .col-xs-12.col-sm-8
+              ul.list-group
+                li.list-group-item Name: #{client.name}
+                li.list-group-item Zip: #{client.zip}
+                li.list-group-item City: #{client.city}
+                li.list-group-item State: #{client.state}
+                li.list-group-item Address: #{client.address}
+                li.list-group-item Age:  #{client.age}
+                  
+        .row.delete-edit
+          form(method='post', action='/clients/#{client._id}/delete')
+            button.btn.btn-danger(type='submit')
+              i.fa.fa-trash 
+          a.btn.btn-info(href='/clients/#{client._id}/edit')
+            i.fa.fa-pencil
