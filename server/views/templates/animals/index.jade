@@ -2,14 +2,16 @@ extends ../../layouts/master
 block content
   h3 Animals Available
   button.btn.btn-default
-    span.glyphicon.glyphicon-plus
-    a(href='animals/new') Add A New Pup!
+    a(href='animals/new')
+      span.glyphicon.glyphicon-plus
+      
 
   .row
     each animal in animals
       .col-sm-6.landing-page-col
         a(href='/animals/#{animal._id}')
           img.landing-page-img.img-circle.img-responsive(src='#{animal.photo}')
+        h3 #{animal.name}
                   
 
   

@@ -2,41 +2,48 @@ extends ../../layouts/master
 block content
   h3 Animal Details:
   
-  form(method='post', action='/animals/#{animal._id}/delete')
-    button.btn.btn-danger(type='submit') Delete Animal
-  a.btn.btn-info(href='/animals/#{animal._id}/edit') Edit
-  
   .row
-      .col-xs-12.col-sm-12.col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-        .panel.panel-default
-          .panel-heading.resume-heading
-            .row
-              .col-lg-12
-                .col-xs-12.col-sm-4
-                  figure
-                    img.details-page.img-circle.img-responsive(src='#{animal.photo}')
-                .col-xs-12.col-sm-8
-                  ul.list-group
-                    li.list-group-item Name: #{animal.name}
-                    li.list-group-item Breed: #{animal.breed}
-                    li.list-group-item Type: #{animal.species}
-                    li.list-group-item Age: #{animal.age}
-                    li.list-group-item  #{animal.description}
+    .panel.panel-default
+      .panel-heading.resume-heading.animal-card
+        .row
+          .col-lg-12
+            .col-xs-12.col-sm-4
+              .row
+                figure
+                  img.img-circle.img-responsive(src='#{animal.photo}')
+              .row
+                .col-xs-offset-1.col-xs-10.fact-list
+                  .row.facts
+                    span Energy
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                  .row.facts
+                    span Crate Trained
+                    i.fa.fa-thumbs-o-up
+                  .row.facts
+                    span Neutered/Spayed
+                    i.fa.fa-thumbs-o-up
+                  .row.facts
+                    span Micro Chipped
+                    i.fa.fa-thumbs-o-down
+            .col-xs-12.col-sm-8
+              ul.list-group
+                li.list-group-item Name: #{animal.name}
+                li.list-group-item Breed: #{animal.breed}
+                li.list-group-item Type: #{animal.species}
+                li.list-group-item Age: #{animal.age}
+                li.list-group-item  #{animal.description}
+                  
+        .row.delete-edit
+          form(method='post', action='/animals/#{animal._id}/delete')
+            button.btn.btn-danger(type='submit')
+              i.fa.fa-trash 
+          a.btn.btn-info(href='/animals/#{animal._id}/edit')
+            i.fa.fa-pencil
 
   
   
-  //- .row#animals
-  //-     .col-xs-4
-  //-       .row
-  //-         a(href='/animals/#{animal._id}')=animal.name
-  //-       .row
-  //-         #image(style='background-size: cover; height:200px; width:200px; background-image:url("' + animal.photo + '")')
-  //-       .row
-  //-         span= animal.description
-  //-       .row
-  //-         span= animal.species
-  //-       .row
-  //-         span= animal.breed
-  //-       .row
-  //-         h6 Age
-  //-         span= animal.age
+  

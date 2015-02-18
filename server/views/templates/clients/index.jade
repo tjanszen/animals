@@ -8,11 +8,5 @@ block content
       .col-xs-4
         .row
           a(href='/clients/#{client._id}')=client.name
-        .row
-          span= client.zip
-        .row
-          span= client.state
-        .row
-          span= client.address
-        .row
-          span= client.age
+          img.img-responsive(src='#{client.photo}')
+          

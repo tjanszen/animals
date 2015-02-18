@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 
 var clientSchema = mongoose.Schema({
     name: String,
+    photo: String,
     zip: Number,
     city: String,
     state: String,

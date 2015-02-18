@@ -8,8 +8,14 @@ block content
           label(for='name') Name
           input#name.form-control(type='text', name='name', autofocus=true)
         .form-group
+          label(for='photo') Image
+          input#image.form-control(type='url', name='photo' placeholder="http://....")
+        .form-group
           label(for='zip') Zip
           input#zip.form-control(type='number' name='zip')
+        .form-group
+          label(for='city') City
+          input#state.form-control(type='text', name='city')
         .form-group
           label(for='state') State
           input#state.form-control(type='text', name='state')
