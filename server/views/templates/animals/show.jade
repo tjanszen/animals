@@ -3,10 +3,11 @@ block content
   h3 Animal Details:
   
   form(method='post', action='/animals/#{animal._id}/adopt')
-    select(name='clientId')
-      each client in clients
-        option(value=client._id)= client.name
-    button(type='submit') Adopt
+    .form-group
+      select#clientName.form-control.input-sm(name='clientId')
+        each client in clients
+          option(value=client._id)= client.name
+    button.btn.btn-default(type='submit') Adopt
 
   .row
     .panel.panel-default
@@ -49,7 +50,3 @@ block content
               i.fa.fa-trash 
           a.btn.btn-info(href='/animals/#{animal._id}/edit')
             i.fa.fa-pencil
-
-  
-  
-  

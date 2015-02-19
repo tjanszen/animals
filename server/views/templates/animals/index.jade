@@ -4,28 +4,30 @@ block content
   button.btn.btn-default
     a(href='animals/new')
       span.glyphicon.glyphicon-plus
+    
+  h3 Filter
   
-  #filter
-    form(method='get', action='/animals')
-      label Min Age
-      input(type='number' name='min')
-      label Max Age
-      input(typ='number' name='max')
-      label Gender
-      select(name='gender')
-        option
-        option male
-        option female
-      label Species
-      select(name='species')
-        option 
-        option Dog
-        option Cat
-        option Frog
-        option Snake
-      label Breed
-      input(type='text', name='breed')
-      button(type='submit') Filter
+  form.form-inline(method='get', action='/animals')
+    .form-group
+      input#min.form-control.input-sm(type='number' name='min' placeholder='Min Age')
+    .form-group
+      input#max.form-control.input-sm(typ='number' name='max' placeholder='Max Age')
+    .form-group
+      select#gender.form-control.input-sm(name='gender')
+        option(value='') Pick Gender
+        option(value='male') male
+        option(value='female') female
+    .form-group
+      select#species.form-control.input-sm(name='species')
+        option(value='') Pick Species
+        option(value='dog') Dog
+        option(value='cat') Cat
+        option(value='frog') Frog
+        option(value='snake') Snake
+    .form-group
+      input#breed.form-control.input-sm(type='text', name='breed' placeholder='Breed')
+    .form-group
+      button.btn.btn-default(type='submit') Filter
         
   .row
     each animal in animals

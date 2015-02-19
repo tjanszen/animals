@@ -1,3 +1,10 @@
 extends ../../layouts/master
 block content
-  h3 home page
+
+  .row#home-page.text-center
+    .col-xs-4
+    .col-xs-4#middle
+      h3 welcome
+      a(href='/animals'): i.fa.fa-github-alt
+      a(href='/clients'): i.fa.fa-folder-open 
+    .col-xs-4

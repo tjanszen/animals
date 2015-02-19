@@ -1,27 +1,21 @@
 extends ../../layouts/master
 block content
-  h3 Add New Client
   .row
-    .col-xs-8
+    .col-xs-offset-2.col-xs-8
+      h3 Add New Client
       form(method='post', action='/clients').form-horizontal
         .form-group
-          label(for='name') Name
-          input#name.form-control(type='text', name='name', autofocus=true)
+          input#name.form-control(type='text', name='name', autofocus=true, placeholder='Enter Name')
         .form-group
-          label(for='photo') Image
-          input#image.form-control(type='url', name='photo' placeholder="http://....")
+          input#image.form-control(type='url', name='photo' placeholder="Image http://...")
         .form-group
-          label(for='zip') Zip
-          input#zip.form-control(type='number' name='zip')
+          input#zip.form-control(type='number' name='zip', placeholder='Enter Zip')
         .form-group
-          label(for='city') City
-          input#state.form-control(type='text', name='city')
+          input#state.form-control(type='text', name='city', placeholder='Enter City')
         .form-group
-          label(for='state') State
-          input#state.form-control(type='text', name='state')
+          input#state.form-control(type='text', name='state', placeholder='Enter State')
         .form-group
-          label(for='address') Address
-          input#address.form-control(type='text', name='address')
+          input#address.form-control(type='text', name='address', placeholder='Enter Address')
         .form-group
           button.btn.btn-default(type='submit') Submit
         

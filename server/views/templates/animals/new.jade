@@ -1,41 +1,31 @@
 extends ../../layouts/master
 block content
-  h3 Add A New Animal
   .row
-    .col-xs-8
+    .col-xs-offset-2.col-xs-8
+      h3 Add A New Animal
       form(method='post', action='/animals').form-horizontal
         .form-group
-          label(for='name') Name
-          input#name.form-control(type='text', name='name' placeholder="Rosco" required autofocus=true)
+          input#name.form-control(type='text', name='name' placeholder="Enter Pet's Name" required autofocus=true)
         .form-group
-          label(for='photo') Image
-          input#image.form-control(type='url', name='photo' placeholder="http://....")
+          input#image.form-control(type='url', name='photo' placeholder="Image http://...")
         .form-group
-          label Gender
-          .radio
-            label
-              input(type='radio', name='gender' value='male')
-              span Male
-          .radio
-            label
-              input(type='radio', name='gender' value='female')
-              span Female
+          select#gender.form-control(name='gender')
+            option(value='') Gender
+            option Male
+            option Female
         .form-group
-          label(for='spcecies') Species
           select#species.form-control(name='species')
+            option(value='') Species
             option Dog
             option Cat
             option Frog
             option Snake
         .form-group
-          label(for='age') Age
-          input#age(type='number', name='age' placeholder="4?")
+          input#age.form-control(type='number', name='age' placeholder="Enter Age")
         .form-group
-          label(for='breed') Breed
-          input#breed(type='text', name='breed' class='form-control' placeholder="Terrior?")
+          input#breed.form-control(type='text', name='breed' class='form-control' placeholder="Enter Breed")
         .form-group
-          label(for='description') Description
-          textarea#description.form-control(type='text', name='description' placeholder="Terrior?")
+          textarea#description.form-control(type='text', name='description' placeholder="Breif Description")
         .form-group
           button.btn.btn-default(type='submit') Submit
       
